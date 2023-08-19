@@ -1,2 +1,1 @@
-# GoSolver
-Implex hash and ai solver.
+Implex Golang hash solver.
