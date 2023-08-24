@@ -180,7 +180,8 @@ func DownloadAndClassify(url, key, prompt string, results chan<- Result, wg *syn
 	}
 
 	// if not solved
-	/*answer, err := SolvePic(url, prompt)
+	// start
+	answer, err := SolvePic(url, prompt)
 	if err != nil {
 		results <- Result{Hash: fmt.Sprintf("%x", contentHash), Match: false, Err: nil, Url: url, St: time.Since(st), Key: key}
 		return
@@ -213,9 +214,10 @@ func DownloadAndClassify(url, key, prompt string, results chan<- Result, wg *syn
 		defer file.Close()
 
 		file.WriteString(fmt.Sprintf("%s,not_%s", fmt.Sprintf("%x", contentHash), prompt) + "\n")
-	}*/
+	}
+	// end
 
-	answer := false
+	//answer := false
 
 	results <- Result{Hash: fmt.Sprintf("%x", contentHash), Match: answer, Err: nil, Url: url, St: time.Since(st), Key: key}
 }
